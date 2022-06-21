@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'core/images/Cicon.png' %}">
+    <title>DAA Codes</title>
+    <style>
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 60px;
+            right: 30px; 
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #35b1f0;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+          }
+          
+          #myBtn:hover {
+            background-color: #a2f5fc;
+          }
+    </style>
+</head>
+<body>
+    
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 border border-warning" style="background-color: #faf59b;">  
+                {% include 'core/sidebar.html' %}
+            </div>
+            <div class="col-sm-9">
+                {% include 'core/cont.html' %}
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-white" style="background-color: #21081a;">
+        <div class="text-center p-3">
+          © 2022 Copyright: Deep Kumar Goenka
+        </div>
+    </footer>
+
+    <script>
+        var mybutton = document.getElementById("myBtn");
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+    <script src="{% static 'core/js/jquery.js' %}"></script>
+    <script src="{% static 'core/js/popper.js' %}"></script>
+    <script src="{% static 'core/js/all.min.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.js' %}"></script>
+</body>
+</html>
